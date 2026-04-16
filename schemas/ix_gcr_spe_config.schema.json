@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/ix_gcr_spe_config.schema.json",
+  "title": "IX-GCR-SPE BOM Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "repo",
+    "configuration",
+    "notes",
+    "zones"
+  ],
+  "properties": {
+    "repo": {
+      "type": "string",
+      "const": "IX-GCR-SPE"
+    },
+    "configuration": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^1\\.0\\.0$"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "zones": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/zone"
+      }
+    }
+  },
+  "$defs": {
+    "zone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "description",
+        "layers"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "orientation": {
+          "type": "string",
+          "enum": [
+            "sidewall",
+            "endcap",
+            "hatch_path",
+            "general_envelope",
+            "ceiling",
+            "floor",
+            "unknown"
+          ]
+        },
+        "occupancy_weight": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "layers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/layer"
+          }
+        }
+      }
+    },
+    "layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "role",
+        "g_cm2",
+        "notes"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "baseline_candidate",
+            "aggressive_branch",
+            "speculative_branch",
+            "instrumentation"
+          ]
+        },
+        "g_cm2": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^S-[0-9]{2}$"
+          },
+          "uniqueItems": true
+        },
+        "threat_class": {
+          "type": "string",
+          "enum": [
+            "GCR",
+            "SPE",
+            "GCR+SPE",
+            "monitoring",
+            "mixed"
+          ]
+        },
+        "material_family": {
+          "type": "string",
+          "enum": [
+            "water_equivalent",
+            "polyethylene_family",
+            "hydride",
+            "cryogenic_hydrogen",
+            "boron_nitrogen_composite",
+            "structural_shell",
+            "instrumentation",
+            "other"
+          ]
+        }
+      }
+    }
+  }
+}
