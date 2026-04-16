@@ -1,0 +1,101 @@
+{
+  "repo": "IX-GCR-SPE",
+  "configuration": "baseline_shadow_vault",
+  "notes": [
+    "Illustrative concept-stage values for areal-density bookkeeping only.",
+    "Do not present these values as validated dose-performance results.",
+    "Zones represent localized design intent, not a finalized CAD model."
+  ],
+  "zones": [
+    {
+      "name": "Shadow Vault sidewall",
+      "description": "High-occupancy refuge sidewall around crew sleep / shelter volume.",
+      "layers": [
+        {
+          "name": "Outer survivability shell",
+          "role": "baseline_candidate",
+          "g_cm2": 2.0,
+          "notes": "Host-vehicle structural and environmental boundary placeholder."
+        },
+        {
+          "name": "Water-equivalent chamber annulus",
+          "role": "baseline_candidate",
+          "g_cm2": 10.0,
+          "notes": "Aligned with NASA technical-brief storm-shelter logic for additional water-equivalent mass."
+        },
+        {
+          "name": "PE/UHMWPE structural shield layer",
+          "role": "baseline_candidate",
+          "g_cm2": 6.0,
+          "notes": "Low-Z structural shielding placeholder."
+        },
+        {
+          "name": "Boron/nitrogen-aware cleanup layer",
+          "role": "aggressive_branch",
+          "g_cm2": 1.5,
+          "notes": "Secondary-conscious inner transition layer."
+        },
+        {
+          "name": "Crew-side low-Z liner",
+          "role": "baseline_candidate",
+          "g_cm2": 1.5,
+          "notes": "Crew-facing final low-Z boundary."
+        }
+      ]
+    },
+    {
+      "name": "Shadow Vault endcap",
+      "description": "Local endcap where hatch-path and end-on exposure require attention.",
+      "layers": [
+        {
+          "name": "Outer survivability shell",
+          "role": "baseline_candidate",
+          "g_cm2": 2.0,
+          "notes": "Placeholder."
+        },
+        {
+          "name": "Water-equivalent endcap chamber",
+          "role": "baseline_candidate",
+          "g_cm2": 12.0,
+          "notes": "Extra local mass for end-on directions."
+        },
+        {
+          "name": "PE hatch-path backing layer",
+          "role": "baseline_candidate",
+          "g_cm2": 4.0,
+          "notes": "Low-Z hatch support and closure mass."
+        },
+        {
+          "name": "Inner liner",
+          "role": "baseline_candidate",
+          "g_cm2": 1.5,
+          "notes": "Crew-side layer."
+        }
+      ]
+    },
+    {
+      "name": "General vehicle habitable envelope",
+      "description": "Lower-protection support envelope outside the Shadow Vault.",
+      "layers": [
+        {
+          "name": "Vehicle shell",
+          "role": "baseline_candidate",
+          "g_cm2": 2.0,
+          "notes": "Placeholder."
+        },
+        {
+          "name": "Distributed hydrogen-rich mass",
+          "role": "baseline_candidate",
+          "g_cm2": 6.0,
+          "notes": "General vehicle distributed protection."
+        },
+        {
+          "name": "Interior low-Z panels",
+          "role": "baseline_candidate",
+          "g_cm2": 2.0,
+          "notes": "Nominal crew-envelope inner surfaces."
+        }
+      ]
+    }
+  ]
+}
