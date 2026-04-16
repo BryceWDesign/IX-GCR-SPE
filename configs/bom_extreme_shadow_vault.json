@@ -1,6 +1,7 @@
 {
   "repo": "IX-GCR-SPE",
   "configuration": "extreme_shadow_vault",
+  "schema_version": "1.0.0",
   "notes": [
     "Illustrative concept-stage extreme branch values for comparison only.",
     "Cryogenic hydrogen and hydride modules here represent aggressive study branches, not flight-ready recommendations.",
@@ -9,85 +10,146 @@
   "zones": [
     {
       "name": "Shadow Vault sidewall",
-      "description": "Aggressive local branch combining cryogenic hydrogen, hydride modules, and graded inner layers.",
+      "description": "Aggressive local branch combining cryogenic hydrogen, hydride modules, and graded inner cleanup layers.",
+      "orientation": "sidewall",
+      "occupancy_weight": 1.0,
       "layers": [
         {
           "name": "Outer survivability shell",
           "role": "baseline_candidate",
           "g_cm2": 2.0,
-          "notes": "Placeholder."
+          "notes": "Structural placeholder.",
+          "source_ids": [
+            "S-03"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "structural_shell"
         },
         {
           "name": "Cryogenic hydrogen annulus",
           "role": "aggressive_branch",
           "g_cm2": 25.0,
-          "notes": "Extreme local hydrogen-rich passive branch."
+          "notes": "Extreme local hydrogen-rich passive branch around the refuge volume.",
+          "source_ids": [
+            "S-04"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "cryogenic_hydrogen"
         },
         {
           "name": "Encapsulated hydride cartridge band",
           "role": "aggressive_branch",
           "g_cm2": 8.0,
-          "notes": "Local enhancement branch for high-occupancy zone."
+          "notes": "Local enhancement branch for the highest-occupancy zone.",
+          "source_ids": [
+            "S-12"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "hydride"
         },
         {
           "name": "Boron/nitrogen-aware cleanup layer",
           "role": "aggressive_branch",
           "g_cm2": 2.0,
-          "notes": "Secondary-conscious transition."
+          "notes": "Secondary-conscious transition layer.",
+          "source_ids": [
+            "S-02"
+          ],
+          "threat_class": "mixed",
+          "material_family": "boron_nitrogen_composite"
         },
         {
           "name": "Crew-side low-Z liner",
           "role": "baseline_candidate",
           "g_cm2": 2.0,
-          "notes": "Crew-facing boundary."
+          "notes": "Crew-facing final passive boundary.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "polyethylene_family"
         }
       ]
     },
     {
       "name": "Shadow Vault hatch path",
       "description": "Aggressive hatch-path treatment where leakage risk is highest.",
+      "orientation": "hatch_path",
+      "occupancy_weight": 0.9,
       "layers": [
         {
           "name": "Shielded hatch cover",
           "role": "baseline_candidate",
           "g_cm2": 10.0,
-          "notes": "Illustrative low-Z hatch cover mass."
+          "notes": "Illustrative low-Z hatch cover mass.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "polyethylene_family"
         },
         {
           "name": "Auxiliary hydrogen-rich insert pack",
           "role": "aggressive_branch",
           "g_cm2": 8.0,
-          "notes": "Added local path treatment."
+          "notes": "Added local path treatment for the closure region.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "SPE",
+          "material_family": "water_equivalent"
         },
         {
           "name": "Inner low-Z closure panel",
           "role": "baseline_candidate",
           "g_cm2": 2.0,
-          "notes": "Crew-side closure."
+          "notes": "Crew-side closure reinforcement.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "polyethylene_family"
         }
       ]
     },
     {
       "name": "General vehicle habitable envelope",
-      "description": "Support envelope in the extreme branch; still less protected than the vault.",
+      "description": "Support envelope in the extreme branch; still less protected than the Shadow Vault.",
+      "orientation": "general_envelope",
+      "occupancy_weight": 0.35,
       "layers": [
         {
           "name": "Vehicle shell",
           "role": "baseline_candidate",
           "g_cm2": 2.0,
-          "notes": "Placeholder."
+          "notes": "Structural placeholder.",
+          "source_ids": [
+            "S-03"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "structural_shell"
         },
         {
           "name": "Distributed water-equivalent mass",
           "role": "baseline_candidate",
           "g_cm2": 8.0,
-          "notes": "Non-vault support protection."
+          "notes": "Non-vault support protection around the general envelope.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "SPE",
+          "material_family": "water_equivalent"
         },
         {
           "name": "Interior low-Z panels",
           "role": "baseline_candidate",
           "g_cm2": 2.0,
-          "notes": "Crew-envelope inner surfaces."
+          "notes": "Crew-envelope inner surfaces.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "polyethylene_family"
         }
       ]
     }
