@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ix-gcr-spe"
+version = "0.1.0"
+description = "Concept-stage aerospace radiation protection architecture repository centered on a Shadow Vault design."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Bryce Lovell" }
+]
+keywords = [
+  "space-radiation",
+  "astronaut-protection",
+  "gcr",
+  "spe",
+  "shadow-vault",
+  "aerospace",
+  "systems-engineering"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Physics"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2,<9",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [
+  "."
+]
+addopts = "-q"
+
+[tool.setuptools]
+include-package-data = false
