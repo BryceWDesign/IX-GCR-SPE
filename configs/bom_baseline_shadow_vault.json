@@ -1,99 +1,156 @@
 {
   "repo": "IX-GCR-SPE",
   "configuration": "baseline_shadow_vault",
+  "schema_version": "1.0.0",
   "notes": [
     "Illustrative concept-stage values for areal-density bookkeeping only.",
+    "This file is the clean passive baseline and intentionally excludes the boron/nitrogen cleanup branch.",
     "Do not present these values as validated dose-performance results.",
     "Zones represent localized design intent, not a finalized CAD model."
   ],
   "zones": [
     {
       "name": "Shadow Vault sidewall",
-      "description": "High-occupancy refuge sidewall around crew sleep / shelter volume.",
+      "description": "High-occupancy refuge sidewall around crew sleep and shelter volume.",
+      "orientation": "sidewall",
+      "occupancy_weight": 1.0,
       "layers": [
         {
           "name": "Outer survivability shell",
           "role": "baseline_candidate",
           "g_cm2": 2.0,
-          "notes": "Host-vehicle structural and environmental boundary placeholder."
+          "notes": "Host-vehicle structural and environmental boundary placeholder.",
+          "source_ids": [
+            "S-03"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "structural_shell"
         },
         {
           "name": "Water-equivalent chamber annulus",
           "role": "baseline_candidate",
           "g_cm2": 10.0,
-          "notes": "Aligned with NASA technical-brief storm-shelter logic for additional water-equivalent mass."
+          "notes": "Aligned with NASA technical-brief storm-shelter logic for additional water-equivalent mass around the refuge volume.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "SPE",
+          "material_family": "water_equivalent"
         },
         {
           "name": "PE/UHMWPE structural shield layer",
           "role": "baseline_candidate",
           "g_cm2": 6.0,
-          "notes": "Low-Z structural shielding placeholder."
-        },
-        {
-          "name": "Boron/nitrogen-aware cleanup layer",
-          "role": "aggressive_branch",
-          "g_cm2": 1.5,
-          "notes": "Secondary-conscious inner transition layer."
+          "notes": "Low-Z structural shielding placeholder for chronic and acute protection support.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "polyethylene_family"
         },
         {
           "name": "Crew-side low-Z liner",
           "role": "baseline_candidate",
           "g_cm2": 1.5,
-          "notes": "Crew-facing final low-Z boundary."
+          "notes": "Crew-facing final low-Z boundary.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "polyethylene_family"
         }
       ]
     },
     {
       "name": "Shadow Vault endcap",
-      "description": "Local endcap where hatch-path and end-on exposure require attention.",
+      "description": "Local endcap where end-on exposure and closure geometry require extra attention.",
+      "orientation": "endcap",
+      "occupancy_weight": 0.8,
       "layers": [
         {
           "name": "Outer survivability shell",
           "role": "baseline_candidate",
           "g_cm2": 2.0,
-          "notes": "Placeholder."
+          "notes": "Structural placeholder.",
+          "source_ids": [
+            "S-03"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "structural_shell"
         },
         {
           "name": "Water-equivalent endcap chamber",
           "role": "baseline_candidate",
           "g_cm2": 12.0,
-          "notes": "Extra local mass for end-on directions."
+          "notes": "Additional local hydrogen-rich mass for end-on directions.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "SPE",
+          "material_family": "water_equivalent"
         },
         {
           "name": "PE hatch-path backing layer",
           "role": "baseline_candidate",
           "g_cm2": 4.0,
-          "notes": "Low-Z hatch support and closure mass."
+          "notes": "Low-Z support layer near closure geometry.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "polyethylene_family"
         },
         {
           "name": "Inner liner",
           "role": "baseline_candidate",
           "g_cm2": 1.5,
-          "notes": "Crew-side layer."
+          "notes": "Crew-side inner passive layer.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "polyethylene_family"
         }
       ]
     },
     {
       "name": "General vehicle habitable envelope",
       "description": "Lower-protection support envelope outside the Shadow Vault.",
+      "orientation": "general_envelope",
+      "occupancy_weight": 0.35,
       "layers": [
         {
           "name": "Vehicle shell",
           "role": "baseline_candidate",
           "g_cm2": 2.0,
-          "notes": "Placeholder."
+          "notes": "Structural placeholder.",
+          "source_ids": [
+            "S-03"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "structural_shell"
         },
         {
           "name": "Distributed hydrogen-rich mass",
           "role": "baseline_candidate",
           "g_cm2": 6.0,
-          "notes": "General vehicle distributed protection."
+          "notes": "General vehicle distributed protection outside the refuge zone.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "SPE",
+          "material_family": "water_equivalent"
         },
         {
           "name": "Interior low-Z panels",
           "role": "baseline_candidate",
           "g_cm2": 2.0,
-          "notes": "Nominal crew-envelope inner surfaces."
+          "notes": "Nominal crew-envelope inner surfaces.",
+          "source_ids": [
+            "S-07"
+          ],
+          "threat_class": "GCR+SPE",
+          "material_family": "polyethylene_family"
         }
       ]
     }
