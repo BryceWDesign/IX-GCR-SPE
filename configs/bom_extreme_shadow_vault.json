@@ -1,0 +1,95 @@
+{
+  "repo": "IX-GCR-SPE",
+  "configuration": "extreme_shadow_vault",
+  "notes": [
+    "Illustrative concept-stage extreme branch values for comparison only.",
+    "Cryogenic hydrogen and hydride modules here represent aggressive study branches, not flight-ready recommendations.",
+    "Use for internal bookkeeping and branch comparison only."
+  ],
+  "zones": [
+    {
+      "name": "Shadow Vault sidewall",
+      "description": "Aggressive local branch combining cryogenic hydrogen, hydride modules, and graded inner layers.",
+      "layers": [
+        {
+          "name": "Outer survivability shell",
+          "role": "baseline_candidate",
+          "g_cm2": 2.0,
+          "notes": "Placeholder."
+        },
+        {
+          "name": "Cryogenic hydrogen annulus",
+          "role": "aggressive_branch",
+          "g_cm2": 25.0,
+          "notes": "Extreme local hydrogen-rich passive branch."
+        },
+        {
+          "name": "Encapsulated hydride cartridge band",
+          "role": "aggressive_branch",
+          "g_cm2": 8.0,
+          "notes": "Local enhancement branch for high-occupancy zone."
+        },
+        {
+          "name": "Boron/nitrogen-aware cleanup layer",
+          "role": "aggressive_branch",
+          "g_cm2": 2.0,
+          "notes": "Secondary-conscious transition."
+        },
+        {
+          "name": "Crew-side low-Z liner",
+          "role": "baseline_candidate",
+          "g_cm2": 2.0,
+          "notes": "Crew-facing boundary."
+        }
+      ]
+    },
+    {
+      "name": "Shadow Vault hatch path",
+      "description": "Aggressive hatch-path treatment where leakage risk is highest.",
+      "layers": [
+        {
+          "name": "Shielded hatch cover",
+          "role": "baseline_candidate",
+          "g_cm2": 10.0,
+          "notes": "Illustrative low-Z hatch cover mass."
+        },
+        {
+          "name": "Auxiliary hydrogen-rich insert pack",
+          "role": "aggressive_branch",
+          "g_cm2": 8.0,
+          "notes": "Added local path treatment."
+        },
+        {
+          "name": "Inner low-Z closure panel",
+          "role": "baseline_candidate",
+          "g_cm2": 2.0,
+          "notes": "Crew-side closure."
+        }
+      ]
+    },
+    {
+      "name": "General vehicle habitable envelope",
+      "description": "Support envelope in the extreme branch; still less protected than the vault.",
+      "layers": [
+        {
+          "name": "Vehicle shell",
+          "role": "baseline_candidate",
+          "g_cm2": 2.0,
+          "notes": "Placeholder."
+        },
+        {
+          "name": "Distributed water-equivalent mass",
+          "role": "baseline_candidate",
+          "g_cm2": 8.0,
+          "notes": "Non-vault support protection."
+        },
+        {
+          "name": "Interior low-Z panels",
+          "role": "baseline_candidate",
+          "g_cm2": 2.0,
+          "notes": "Crew-envelope inner surfaces."
+        }
+      ]
+    }
+  ]
+}
